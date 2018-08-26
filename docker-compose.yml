@@ -18,7 +18,9 @@ services:
             - php
             - mysqldb
     php:
-        image: jbeduya/php-db2:${PHP_VERSION}
+        build: 
+            context: "build/php-db2"
+            dockerfile: Dockerfile
         restart: always
         volumes:
             - "./etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
